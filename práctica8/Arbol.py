@@ -55,6 +55,26 @@ class Arbol:
             if nodo.hijoDer != None:
                 self.prefijo(nodo.hijoDer)
 
+    
+    def times_prefijo(self, nodo):
+        times = 0
+        times += 1
+        if nodo != None:
+
+            print( str(nodo.valor) )
+
+            if nodo.hijoIzq != None:
+                times += self.times_prefijo(nodo.hijoIzq)
+
+            if nodo.hijoDer != None:
+                times += self.times_prefijo(nodo.hijoDer)
+
+        return times
+    
+    def times_recorrer_prefijo(self):
+        if self.raiz != None:
+            return self.times_prefijo( self.raiz )
+
 
     def imprimirPrefijo(self):
         if self.raiz != None:
@@ -75,6 +95,26 @@ class Arbol:
         if self.raiz != None:
             self.sufijo( self.raiz )
 
+    
+    def times_sufijo(self, nodo):
+        times = 0
+        times += 1
+
+        if nodo != None:
+            if nodo.hijoIzq != None:
+                times += self.times_sufijo(nodo.hijoIzq)
+
+            if nodo.hijoDer != None:
+                times += self.times_sufijo(nodo.hijoDer)
+
+            print( str(nodo.valor) )
+
+        return times
+
+    def times_recorrer_sufijo(self):
+        if self.raiz != None:
+            return self.times_sufijo( self.raiz )
+
 
     def infijo(self, nodo):
         if nodo != None:
@@ -91,3 +131,22 @@ class Arbol:
         if self.raiz != None:
             self.infijo( self.raiz )
 
+
+    def times_infijo(self, nodo):
+        times = 0
+        times += 1
+        if nodo != None:
+            if nodo.hijoIzq != None:
+                times += self.times_infijo(nodo.hijoIzq)
+
+            print( str(nodo.valor) )
+
+            if nodo.hijoDer != None:
+                times += self.times_infijo(nodo.hijoDer)
+        
+        return times
+
+
+    def times_recorrer_infijo(self):
+        if self.raiz != None:
+            return self.times_infijo( self.raiz )
