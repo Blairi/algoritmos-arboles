@@ -31,7 +31,9 @@ class ArbolB:
         y.n = self.t - 1
 
         for j in range(x.n + 1, i, -1):
-            x.hijos[i + 1] = z
+            x.hijos[j + 1] = x.hijos[j]
+        
+        x.hijos[i + 1] = z
         
         for j in range(x.n, i - 1, -1):
             x.llaves[j + 1] = x.llaves[j]

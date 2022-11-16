@@ -22,8 +22,8 @@ def main():
     BT.bTreeInsert(actual, ord("M"))
 
     print(BT.raiz.llaves)
-    print(BT.raiz.llaves[1].llaves)
-    print(BT.raiz.llaves[2].llaves)
+    print(BT.raiz.hijos[1].llaves)
+    print(BT.raiz.hijos[2].llaves)
 
     print("Se insertara O")
     BT.bTreeInsert(actual, ord("O"))
